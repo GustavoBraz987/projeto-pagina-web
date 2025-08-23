@@ -67,3 +67,14 @@ p{
 .logo-site {
     height: 50px; /* Ajuste conforme o tamanho desejado */
 }
+
+.categoria2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.categoria-imagens img {
+    height: 200px;
+    border-radius: 16px;
+}
