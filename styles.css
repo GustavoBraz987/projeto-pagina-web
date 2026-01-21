@@ -1,80 +1,38 @@
-body {
-    color: white;
-    background: black;
-    margin: 0px;
-     font-family: "ChaKra Petch", sans-serif;
-     margin-bottom: 100px;
+/* Reset simples */
+* {box-sizing: border-box; margin:0; padding:0}
+body {font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.4; color:#222; background:#f7f7f7}
+.container {max-width:1100px; margin:0 auto; padding:1rem}
+
+/* Header */
+.site-header {background:#fff; border-bottom:1px solid #e6e6e6}
+.site-header .container {display:flex; align-items:center; justify-content:space-between; padding:1rem}
+.brand {font-size:1.2rem}
+.top-nav a {margin-left:1rem; color:#333; text-decoration:none}
+
+/* Intro */
+.intro {padding:2rem 0 1rem}
+.intro h2 {margin-bottom:.5rem}
+
+/* Gallery grid */
+.gallery {display:grid; gap:1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin:1rem 0}
+.card {background:#fff; border:1px solid #e6e6e6; border-radius:8px; overflow:hidden; cursor:pointer; transition:transform .12s ease, box-shadow .12s ease}
+.card:hover {transform:translateY(-4px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.card img {width:100%; height:200px; object-fit:cover; display:block}
+.card-body {padding:.75rem}
+.card-body h3 {font-size:1rem; margin-bottom:.25rem}
+.price {color:#0077cc; font-weight:600}
+
+/* Lightbox */
+.lightbox {position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.6); padding:1rem; z-index:9999}
+.lightbox[aria-hidden="false"] {display:flex}
+.lightbox-content {background:#fff; border-radius:8px; max-width:900px; width:100%; max-height:90vh; overflow:auto; position:relative; display:grid; grid-template-columns: 1fr 320px; gap:1rem; padding:1rem}
+.lightbox-content img {width:100%; height:100%; object-fit:contain; background:#000}
+.lightbox-info {padding:.5rem 0}
+.close {position:absolute; right:.5rem; top:.3rem; background:transparent; border:0; font-size:1.6rem; cursor:pointer}
+
+/* Responsive adjustments */
+@media (max-width:800px) {
+  .lightbox-content {grid-template-columns: 1fr; padding:.5rem}
+  .card img {height:160px}
 }
-
-header {
-    border-bottom: solid rgb(243, 144, 78) 2px;
-    padding: 20px;
-    font-size: 32px;
-    color: rgb(243, 144, 78);
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Espaço entre a logo e o texto */
-}
-
-
-.chamada {
-    background: rgb(68, 155, 236);
-    padding-bottom: 80px;
-    padding-top: 80px;
-    display: flex;
-    justify-content: center;
-}
-
-.chamada-texto{
-    margin-right: 5%;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-p{
-    font-size: 20px;
-}
-
-
-.categoria-videos {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-}
-
-.categoria {
-    padding-left: 20 px;
-    padding-right: 20px;
-    margin-top: 50px;
-}
-
-.categoria-videos img {
-    opacity: 0.5;
-    height: 200px;
-}
-
-.categoria-videos img:hover {
-    opacity: 1.0;
-    border: 1px solid green;
-}
-
-.categoria h2 {
-    color:rgb(68, 155, 236)
-}
-
-.logo-site {
-    height: 50px; /* Ajuste conforme o tamanho desejado */
-}
-
-.categoria2 {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 50px;
-}
-
-.categoria-imagens img {
-    height: 200px;
-    border-radius: 16px;
-}
+.site-footer {padding:1rem 0; text-align:center; color:#666; margin-top:2rem}
