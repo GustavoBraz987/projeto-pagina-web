@@ -3,103 +3,320 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vitrine Digital</title>
+  <title>Vitrine Digital — Sua loja online profissional</title>
+  <meta name="description" content="Vitrine digital moderna e responsiva para apresentar produtos e serviços. Fácil de personalizar, com formulário de contato, depoimentos e integração WhatsApp." />
+  <meta name="theme-color" content="#0b74de" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Use system fonts for performance; fallback to Google fonts if desired -->
   <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/script.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">Minha Vitrine Digital</h1>
-      <nav class="top-nav">
-        <a href="#galeria">Produtos</a>
-        <a href="#contato">Contato</a>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/logo-placeholder.svg" alt="Logomarca" class="logo" width="40" height="40" />
+        <a href="#home" class="brand-title">Minha Vitrine</a>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
       </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <section id="intro" class="intro">
-      <h2>Bem-vindo(a)</h2>
-      <p>Apresente seus produtos com fotos nítidas. Clique em uma imagem para ver mais detalhes.</p>
-    </section>
-
-    <section id="galeria" class="gallery">
-      <!-- Cada item: substitua as imagens em images/productX.jpg -->
-      <article class="card" data-title="Produto 1" data-price="R$ 49,90" data-desc="Descrição curta do Produto 1">
-        <img src="images/product1.jpg" alt="Produto 1" loading="lazy" />
-        <div class="card-body">
-          <h3>Produto 1</h3>
-          <p class="price">R$ 49,90</p>
-        </div>
-      </article>
-
-      <article class="card" data-title="Produto 2" data-price="R$ 79,00" data-desc="Descrição curta do Produto 2">
-        <img src="images/product2.jpg" alt="Produto 2" loading="lazy" />
-        <div class="card-body">
-          <h3>Produto 2</h3>
-          <p class="price">R$ 79,00</p>
-        </div>
-      </article>
-
-      <article class="card" data-title="Produto 3" data-price="R$ 29,50" data-desc="Descrição curta do Produto 3">
-        <img src="images/product3.jpg" alt="Produto 3" loading="lazy" />
-        <div class="card-body">
-          <h3>Produto 3</h3>
-          <p class="price">R$ 29,50</p>
-        </div>
-      </article>
-
-      <article class="card" data-title="Produto 4" data-price="R$ 120,00" data-desc="Descrição curta do Produto 4">
-        <img src="images/product4.jpg" alt="Produto 4" loading="lazy" />
-        <div class="card-body">
-          <h3>Produto 4</h3>
-          <p class="price">R$ 120,00</p>
-        </div>
-      </article>
-
-      <article class="card" data-title="Produto 5" data-price="R$ 15,00" data-desc="Descrição curta do Produto 5">
-        <img src="images/product5.jpg" alt="Produto 5" loading="lazy" />
-        <div class="card-body">
-          <h3>Produto 5</h3>
-          <p class="price">R$ 15,00</p>
-        </div>
-      </article>
-
-      <article class="card" data-title="Produto 6" data-price="R$ 199,00" data-desc="Descrição curta do Produto 6">
-        <img src="images/product6.jpg" alt="Produto 6" loading="lazy" />
-        <div class="card-body">
-          <h3>Produto 6</h3>
-          <p class="price">R$ 199,00</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- Lightbox / Modal -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-      <div class="lightbox-content" role="dialog" aria-modal="true">
-        <button id="closeBtn" class="close" aria-label="Fechar">×</button>
-        <img id="lightboxImg" src="" alt="" />
-        <div class="lightbox-info">
-          <h3 id="lightboxTitle"></h3>
-          <p id="lightboxPrice" class="price"></p>
-          <p id="lightboxDesc"></p>
-        </div>
+      <!-- Actions: dark mode + mobile toggle -->
+      <div class="actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Alternar tema" title="Alternar tema">🌓</button>
+        <button id="mobileToggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
       </div>
     </div>
 
-    <section id="contato" class="contact">
-      <h2>Contato</h2>
-      <p>Quer vender online ou receber pedidos? Adicione suas informações de contato aqui.</p>
-      <p>Email: <a href="mailto:seu@email.com">seu@email.com</a></p>
+    <!-- Mobile menu (collapses) -->
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#produtos" class="mobile-link">Produtos</a></li>
+        <li><a href="#sobre" class="mobile-link">Sobre</a></li>
+        <li><a href="#depoimentos" class="mobile-link">Depoimentos</a></li>
+        <li><a href="#contato" class="mobile-link">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">Apresente seus produtos com profissionalismo</h1>
+          <p class="hero-sub">Vitrine digital moderna, otimizada e responsiva para aumentar visibilidade e conversões. Fácil de editar e publicar.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#produtos">Ver Produtos</a>
+            <a class="btn btn-ghost" href="#contato">Solicitar Orçamento</a>
+          </div>
+          <ul class="hero-features">
+            <li>Design profissional</li>
+            <li>Responsivo (mobile/tablet/desktop)</li>
+            <li>Integração WhatsApp e contato</li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-hidden="false">
+          <picture>
+            <source media="(min-width:900px)" srcset="images/hero-lg.webp" type="image/webp">
+            <img src="images/hero.jpg" alt="Banner com produtos" loading="lazy" width="800" height="520">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produtos/Serviços -->
+    <section id="produtos" class="section produtos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Produtos em destaque</h2>
+          <p>Seleção de produtos escolhidos para destacar qualidade e valor.</p>
+        </div>
+
+        <div class="grid produtos-grid" id="produtosGrid" aria-live="polite">
+          <!-- Exemplo de card; clone/adapte conforme necessário -->
+          <article class="produto-card reveal" tabindex="0" data-name="Produto A" data-price="R$ 79,90" aria-label="Produto A — R$ 79,90">
+            <div class="media">
+              <img src="images/product1.jpg" srcset="images/product1-480.jpg 480w, images/product1-800.jpg 800w" sizes="(max-width:600px) 100vw, 33vw" alt="Produto A imagem" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="produto-title">Produto A</h3>
+              <p class="produto-desc">Breve descrição do produto para atrair o cliente.</p>
+              <div class="card-meta">
+                <span class="price">R$ 79,90</span>
+                <a class="btn btn-sm" href="#contato" aria-label="Saiba mais sobre Produto A">Saiba mais</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="produto-card reveal" tabindex="0" data-name="Produto B" data-price="R$ 149,00">
+            <div class="media">
+              <img src="images/product2.jpg" alt="Produto B imagem" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="produto-title">Produto B</h3>
+              <p class="produto-desc">Descrição curta destacando o diferencial.</p>
+              <div class="card-meta">
+                <span class="price">R$ 149,00</span>
+                <a class="btn btn-sm" href="#contato">Saiba mais</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="produto-card reveal" tabindex="0" data-name="Serviço C" data-price="Sob consulta">
+            <div class="media">
+              <img src="images/product3.jpg" alt="Serviço C imagem" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="produto-title">Serviço C</h3>
+              <p class="produto-desc">Serviço profissional sob medida para suas necessidades.</p>
+              <div class="card-meta">
+                <span class="price">Sob consulta</span>
+                <a class="btn btn-sm" href="#contato">Solicitar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Mais cards podem ser adicionados manualmente ou via JSON/JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section sobre">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sobre a empresa</h2>
+          <p>Somos uma equipe dedicada a criar vitrines digitais que convertem visitantes em clientes.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>Nossa missão é apresentar seus produtos e serviços de maneira clara, elegante e otimizada para performance e SEO. Trabalhamos com design centrado no usuário para aumentar confiança e taxa de contato.</p>
+            <ul class="about-list">
+              <li>Atendimento personalizado</li>
+              <li>Entregas rápidas e confiáveis</li>
+              <li>Suporte e atualizações</li>
+            </ul>
+            <a class="btn" href="#contato">Fale conosco</a>
+          </div>
+
+          <div class="about-media reveal">
+            <div class="icons-grid">
+              <figure>
+                <img src="images/icon-quality.svg" alt="Qualidade" loading="lazy">
+                <figcaption>Qualidade</figcaption>
+              </figure>
+              <figure>
+                <img src="images/icon-speed.svg" alt="Velocidade" loading="lazy">
+                <figcaption>Velocidade</figcaption>
+              </figure>
+              <figure>
+                <img src="images/icon-support.svg" alt="Suporte" loading="lazy">
+                <figcaption>Suporte</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diferenciais / Benefícios -->
+    <section class="section beneficios">
+      <div class="container">
+        <div class="section-header">
+          <h2>Por que escolher nossa vitrine</h2>
+          <p>Benefícios pensados para você e seus clientes.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit reveal">
+            <img src="images/icon-responsive.svg" alt="" aria-hidden="true" loading="lazy">
+            <h3>Responsivo</h3>
+            <p>Experiência perfeita em todos os dispositivos.</p>
+          </div>
+
+          <div class="benefit reveal">
+            <img src="images/icon-seo.svg" alt="" aria-hidden="true" loading="lazy">
+            <h3>Otimizado para SEO</h3>
+            <p>Estrutura semântica e meta tags para melhor indexação.</p>
+          </div>
+
+          <div class="benefit reveal">
+            <img src="images/icon-performance.svg" alt="" aria-hidden="true" loading="lazy">
+            <h3>Alta performance</h3>
+            <p>Carregamento rápido e imagens otimizadas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="section depoimentos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Depoimentos</h2>
+          <p>O que clientes dizem sobre nosso trabalho.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <blockquote class="testimonial reveal">
+            <p class="quote">"A vitrine transformou nossa apresentação online. A clareza e o design geraram mais contatos!"</p>
+            <footer class="cite">
+              <span class="name">Ana Silva</span>
+              <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial reveal">
+            <p class="quote">"Entrega rápida e excelente suporte. Recomendo."</p>
+            <footer class="cite">
+              <span class="name">Carlos Pereira</span>
+              <span class="stars" aria-label="4 de 5 estrelas">★★★★☆</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta section-cta">
+      <div class="container cta-inner reveal">
+        <h2>Pronto para destacar seus produtos?</h2>
+        <p>Converse conosco e tenha sua vitrine digital profissional em pouco tempo.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#contato">Entrar em contato</a>
+          <!-- WhatsApp quick link -->
+          <a class="btn btn-whatsapp" href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20vitrine%20digital" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section contato">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contato</h2>
+          <p>Preencha o formulário ou envie uma mensagem via WhatsApp.</p>
+        </div>
+
+        <div class="contact-grid">
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <label for="name">Nome</label>
+              <input id="name" name="name" type="text" required minlength="2" placeholder="Seu nome" />
+              <span class="error" id="error-name" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="nome@exemplo.com" />
+              <span class="error" id="error-email" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" required minlength="10" placeholder="Como podemos ajudar?"></textarea>
+              <span class="error" id="error-message" aria-live="polite"></span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+              <button type="reset" class="btn btn-ghost">Limpar</button>
+            </div>
+
+            <div id="formFeedback" class="form-feedback" role="status" aria-live="polite"></div>
+          </form>
+
+          <aside class="contact-info reveal" aria-label="Informações de contato">
+            <h3>Outras formas de contato</h3>
+            <p>Email: <a href="mailto:contato@seudominio.com">contato@seudominio.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">+55 11 99999-9999</a></p>
+            <p>Endereço: Rua Exemplo, 123 — Cidade/UF</p>
+
+            <div class="socials">
+              <a href="#" aria-label="Facebook">Facebook</a>
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+          </aside>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Minha Vitrine Digital</p>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="yearFooter"></span> Minha Vitrine — Todos os direitos reservados.</p>
+      <nav class="footer-nav" aria-label="Rodapé">
+        <a href="/politica-privacidade.html">Política de Privacidade</a>
+        <a href="#contato">Fale Conosco</a>
+      </nav>
     </div>
   </footer>
 
-  <script src="assets/script.js"></script>
+  <!-- Floating WhatsApp quick button -->
+  <a class="floating-wa" href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+    <img src="images/whatsapp-icon.svg" alt="WhatsApp" width="48" height="48">
+  </a>
+
 </body>
 </html>
+
