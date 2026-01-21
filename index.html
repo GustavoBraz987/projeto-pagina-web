@@ -1,67 +1,105 @@
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Federant&display=swap" rel="stylesheet">
-    <title>TODO CAMPO</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vitrine Digital</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-
 <body>
-
-    <header>
-     <img src="logo.png" alt="Logo TODO CAMPO" class="logo-site">
-   TODO CAMPO
-    </header>
-
-    <section class= chamada>
-    <div class="chamada-texto">
-        <h1>A odisseia de uma garrafa</h1>
-        <p>#meio-ambiente</p>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Minha Vitrine Digital</h1>
+      <nav class="top-nav">
+        <a href="#galeria">Produtos</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
-    
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/EWqnWXnXURw?si=RJnS6lk2DJOJ614S"
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-  encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+  </header>
+
+  <main class="container">
+    <section id="intro" class="intro">
+      <h2>Bem-vindo(a)</h2>
+      <p>Apresente seus produtos com fotos nítidas. Clique em uma imagem para ver mais detalhes.</p>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <!-- Cada item: substitua as imagens em images/productX.jpg -->
+      <article class="card" data-title="Produto 1" data-price="R$ 49,90" data-desc="Descrição curta do Produto 1">
+        <img src="images/product1.jpg" alt="Produto 1" loading="lazy" />
+        <div class="card-body">
+          <h3>Produto 1</h3>
+          <p class="price">R$ 49,90</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Produto 2" data-price="R$ 79,00" data-desc="Descrição curta do Produto 2">
+        <img src="images/product2.jpg" alt="Produto 2" loading="lazy" />
+        <div class="card-body">
+          <h3>Produto 2</h3>
+          <p class="price">R$ 79,00</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Produto 3" data-price="R$ 29,50" data-desc="Descrição curta do Produto 3">
+        <img src="images/product3.jpg" alt="Produto 3" loading="lazy" />
+        <div class="card-body">
+          <h3>Produto 3</h3>
+          <p class="price">R$ 29,50</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Produto 4" data-price="R$ 120,00" data-desc="Descrição curta do Produto 4">
+        <img src="images/product4.jpg" alt="Produto 4" loading="lazy" />
+        <div class="card-body">
+          <h3>Produto 4</h3>
+          <p class="price">R$ 120,00</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Produto 5" data-price="R$ 15,00" data-desc="Descrição curta do Produto 5">
+        <img src="images/product5.jpg" alt="Produto 5" loading="lazy" />
+        <div class="card-body">
+          <h3>Produto 5</h3>
+          <p class="price">R$ 15,00</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Produto 6" data-price="R$ 199,00" data-desc="Descrição curta do Produto 6">
+        <img src="images/product6.jpg" alt="Produto 6" loading="lazy" />
+        <div class="card-body">
+          <h3>Produto 6</h3>
+          <p class="price">R$ 199,00</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Lightbox / Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-content" role="dialog" aria-modal="true">
+        <button id="closeBtn" class="close" aria-label="Fechar">×</button>
+        <img id="lightboxImg" src="" alt="" />
+        <div class="lightbox-info">
+          <h3 id="lightboxTitle"></h3>
+          <p id="lightboxPrice" class="price"></p>
+          <p id="lightboxDesc"></p>
+        </div>
+      </div>
     </div>
+
+    <section id="contato" class="contact">
+      <h2>Contato</h2>
+      <p>Quer vender online ou receber pedidos? Adicione suas informações de contato aqui.</p>
+      <p>Email: <a href="mailto:seu@email.com">seu@email.com</a></p>
     </section>
+  </main>
 
-    <section class="categoria">
-        <h2>videos</h2>
-        <div class="categoria-videos">
-            <a href="https://youtu.be/zkQu0QNcWjA?si=hAZ_eWj8qyaBGoBw">
-            <img src=https://img.youtube.com/vi/zkQu0QNcWjA/maxresdefault.jpg />
-            </a>
-            <a href="https://youtu.be/sfa-jnXtA84?si=QxtniVdWxVdeBfoW">
-            <img src=https://img.youtube.com/vi/sfa-jnXtA84/maxresdefault.jpg />
-            </a>
-            <a href="https://youtu.be/1Lqya70d7hw?si=IHPFTWovMgA7iMhW">
-            <img src=https://img.youtube.com/vi/1Lqya70d7hw/maxresdefault.jpg />
-            </a>
-            <a href="https://youtu.be/Tcy_QYXPhsY?si=ZDfWKRH-F7Ma1wih">
-            <img src=https://img.youtube.com/vi/Tcy_QYXPhsY/maxresdefault.jpg />
-            </a>
-            <a href="https://youtu.be/Db2SIzz00_c?si=B__7NpMgFAKzVaiL">
-            <img src=https://img.youtube.com/vi/Db2SIzz00_c/maxresdefault.jpg />
-            </a>
-        </div>
-    </section>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Minha Vitrine Digital</p>
+    </div>
+  </footer>
 
-
-<section class="categoria2">
-        <h2>Imagens</h2>
-        <hr>
-        <div class="categoria-imagens">
-            <img src="meio ambiente.jpg" />
-            <img src="meio ambiente.png" />
-        </div>
-    </section>
-
-
+  <script src="assets/script.js"></script>
 </body>
-
-
 </html>
